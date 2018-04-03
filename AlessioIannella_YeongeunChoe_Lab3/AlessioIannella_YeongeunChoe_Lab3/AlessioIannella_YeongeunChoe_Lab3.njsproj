@@ -5,6 +5,10 @@
     <Name>AlessioIannella_YeongeunChoe_Lab3</Name>
     <RootNamespace>AlessioIannella_YeongeunChoe_Lab3</RootNamespace>
     <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+    <EnableTypeScript>true</EnableTypeScript>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <ToolsVersionPromptShown>0.0</ToolsVersionPromptShown>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,10 +49,19 @@
     <Compile Include="config\mongoose.js" />
     <Compile Include="config\passport.js" />
     <Compile Include="config\strategies\local.js" />
+    <Compile Include="public\systemjs.config.js" />
     <Compile Include="server.js" />
     <Content Include="app\views\index.ejs" />
     <Content Include="package.json" />
+    <Content Include="public\app\app.template.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\app\app.template.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="README.md" />
+    <Content Include="tsconfig.json" />
+    <Content Include="typings.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
@@ -59,6 +72,25 @@
     <Folder Include="config\" />
     <Folder Include="config\env\" />
     <Folder Include="config\strategies\" />
+    <Folder Include="public\" />
+    <Folder Include="public\app\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="public\app\app.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="public\app\app.module.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="public\app\app.routes.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="public\app\authentication.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="public\app\bootstrap.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
