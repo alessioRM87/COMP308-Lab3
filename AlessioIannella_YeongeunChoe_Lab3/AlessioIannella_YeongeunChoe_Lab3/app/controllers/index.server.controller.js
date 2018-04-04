@@ -2,7 +2,7 @@
 exports.render = function (req, res) {
     // Set the safe user object 
     const student = (!req.student) ? null : {
-        _id: req.student.id,
+        _id: req.student.studentNumber,
         firstName: req.student.firstName,
         lastName: req.student.lastName
     };

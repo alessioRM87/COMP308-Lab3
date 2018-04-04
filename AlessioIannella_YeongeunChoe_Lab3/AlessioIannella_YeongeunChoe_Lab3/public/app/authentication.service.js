@@ -10,7 +10,7 @@ System.register(["@angular/core", "@angular/common/http"], function (exports_1, 
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, http_1, httpOptions, AuthenticationService;
+    var core_1, http_1, httpOptions, AuthenticationService, _a;
     return {
         setters: [
             function (core_1_1) {
@@ -24,7 +24,7 @@ System.register(["@angular/core", "@angular/common/http"], function (exports_1, 
             httpOptions = {
                 headers: new http_1.HttpHeaders({ 'Content-Type': 'application/json' })
             };
-            AuthenticationService = /** @class */ (function () {
+            AuthenticationService = (function () {
                 function AuthenticationService(http) {
                     this.http = http;
                 }
@@ -36,13 +36,12 @@ System.register(["@angular/core", "@angular/common/http"], function (exports_1, 
                     var body = JSON.stringify(registerRequest);
                     return this.http.post('/api/auth/signup', body, httpOptions);
                 };
-                AuthenticationService = __decorate([
-                    core_1.Injectable(),
-                    __metadata("design:paramtypes", [typeof (_a = typeof http_1.HttpClient !== "undefined" && http_1.HttpClient) === "function" && _a || Object])
-                ], AuthenticationService);
                 return AuthenticationService;
-                var _a;
             }());
+            AuthenticationService = __decorate([
+                core_1.Injectable(),
+                __metadata("design:paramtypes", [typeof (_a = typeof http_1.HttpClient !== "undefined" && http_1.HttpClient) === "function" && _a || Object])
+            ], AuthenticationService);
             exports_1("AuthenticationService", AuthenticationService);
         }
     };

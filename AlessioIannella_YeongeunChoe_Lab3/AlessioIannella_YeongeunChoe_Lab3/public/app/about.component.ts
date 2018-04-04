@@ -3,9 +3,9 @@
 
 @Component({
     selector: 'app-about',
-    template: '<h1>About this App</h1>'
-
-
+    template: '<h1>About this App</h1>' 
+    
+    
 })
 
 export class AboutComponent {

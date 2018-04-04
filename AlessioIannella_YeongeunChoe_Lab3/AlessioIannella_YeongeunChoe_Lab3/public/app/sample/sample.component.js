@@ -15,17 +15,17 @@ System.register(["@angular/core"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            SampleComponent = /** @class */ (function () {
+            SampleComponent = (function () {
                 function SampleComponent() {
                 }
-                SampleComponent = __decorate([
-                    core_1.Component({
-                        selector: 'sample-component',
-                        template: '<h1>I am a sample component</h1>'
-                    })
-                ], SampleComponent);
                 return SampleComponent;
             }());
+            SampleComponent = __decorate([
+                core_1.Component({
+                    selector: 'sample-component',
+                    template: '<h1>I am a sample component</h1>'
+                })
+            ], SampleComponent);
             exports_1("SampleComponent", SampleComponent);
         }
     };

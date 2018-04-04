@@ -7,7 +7,7 @@ System.register(["@angular/core"], function (exports_1, context_1) {
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, AboutComponent;
+    var core_1, ExampleService;
     return {
         setters: [
             function (core_1_1) {
@@ -15,19 +15,20 @@ System.register(["@angular/core"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            AboutComponent = (function () {
-                function AboutComponent() {
+            ExampleService = (function () {
+                function ExampleService() {
                 }
-                return AboutComponent;
+                // this is a simple method of the service 
+                ExampleService.prototype.simpleMethod = function () {
+                    return 'Hi, I am a simple service!';
+                };
+                return ExampleService;
             }());
-            AboutComponent = __decorate([
-                core_1.Component({
-                    selector: 'app-about',
-                    template: '<h1>About this App</h1>'
-                })
-            ], AboutComponent);
-            exports_1("AboutComponent", AboutComponent);
+            ExampleService = __decorate([
+                core_1.Injectable()
+            ], ExampleService);
+            exports_1("ExampleService", ExampleService);
         }
     };
 });
-//# sourceMappingURL=about.component.js.map
+//# sourceMappingURL=example.service.js.map

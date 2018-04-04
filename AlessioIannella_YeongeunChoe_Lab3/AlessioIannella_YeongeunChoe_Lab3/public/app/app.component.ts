@@ -1,24 +1,25 @@
 ﻿import { Component } from '@angular/core';
 import { SampleComponent } from './sample/sample.component';
 
+
 import { AuthenticationService } from './authentication.service';
 
 
 @Component({
     selector: 'first-angular-application',
-    // template: '<h1>I am an application component!</h1>',
-    // templateUrl: '/app/app.template.html'
+   // template: '<h1>I am an application component!</h1>',
+   // templateUrl: '/app/app.template.html'
 
     //
     //templateUrl: '/app/about.template.html'
-
+    
 
     //interpolation binding
     //template: '<h1>{{title}}</h1>'
 
     //property binding
     //template: '<button [disabled]="isButtonDisabled">My Button</button > ',
-
+    
     //event binding
     //template: '<button (click)="showMessage()">Show Message</button>'
 
@@ -36,12 +37,12 @@ import { AuthenticationService } from './authentication.service';
     //using a service
     //template: '<h1>{{ title }}</h1>',
     //providers: [ExampleService]
-
+    
 })
 
 export class AppComponent {
 
-    public studentNumber;
+ public studentNumber;
     public password;
     public loginError;
 
@@ -68,5 +69,5 @@ export class AppComponent {
 
     }
 
-
+    
 }

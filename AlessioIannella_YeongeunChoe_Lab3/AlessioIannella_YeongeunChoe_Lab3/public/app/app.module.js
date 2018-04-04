@@ -39,24 +39,24 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/forms",
             }
         ],
         execute: function () {
-            AppModule = /** @class */ (function () {
+            AppModule = (function () {
                 function AppModule() {
                 }
-                AppModule = __decorate([
-                    core_1.NgModule({
-                        imports: [
-                            platform_browser_1.BrowserModule, forms_1.FormsModule, router_1.RouterModule.forRoot(app_routes_1.AppRoutes), HttpClientModule,
-                        ],
-                        //declare all components here
-                        declarations: [
-                            about_component_1.AboutComponent, sample_component_1.SampleComponent, app_component_1.AppComponent
-                        ],
-                        providers: [authentication_service_1.AuthenticationService],
-                        bootstrap: [app_component_1.AppComponent]
-                    })
-                ], AppModule);
                 return AppModule;
             }());
+            AppModule = __decorate([
+                core_1.NgModule({
+                    imports: [
+                        platform_browser_1.BrowserModule, forms_1.FormsModule, router_1.RouterModule.forRoot(app_routes_1.AppRoutes),
+                    ],
+                    //declare all components here
+                    declarations: [
+                        about_component_1.AboutComponent, sample_component_1.SampleComponent, app_component_1.AppComponent
+                    ],
+                    providers: [authentication_service_1.AuthenticationService],
+                    bootstrap: [app_component_1.AppComponent]
+                })
+            ], AppModule);
             exports_1("AppModule", AppModule);
         }
     };

@@ -1,4 +1,4 @@
-// Set the 'NODE_ENV' variable
+﻿// Set the 'NODE_ENV' variable
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 // Load the module dependencies

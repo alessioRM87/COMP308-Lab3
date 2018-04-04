@@ -9,8 +9,8 @@ import { SampleComponent } from './sample/sample.component';
 import { AboutComponent } from './about.component';
 //
 
-import { RouterModule } from '@angular/router';
-import { AppRoutes } from './app.routes';
+import { RouterModule }   from '@angular/router';
+import { AppRoutes }       from './app.routes';
 //
 @NgModule({
     imports: [
@@ -18,9 +18,9 @@ import { AppRoutes } from './app.routes';
     ],
     //declare all components here
     declarations: [
-        AboutComponent, SampleComponent, AppComponent
+        AboutComponent, SampleComponent, AppComponent 
     ],
-    providers: [AuthenticationService],
+    providers: [AuthenticationService ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
