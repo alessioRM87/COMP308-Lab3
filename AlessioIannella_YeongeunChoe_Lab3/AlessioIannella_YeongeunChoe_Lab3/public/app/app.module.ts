@@ -1,23 +1,26 @@
 ﻿import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-//FormsModule required for ngModel to work in HTML
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; //required for ngModel to work in HTML
 //
 import { AppComponent } from './app.component';
-import { AuthenticationService } from './authentication.service'
+import { AuthenticationService } from './authentication.service';
+
+import { SampleComponent } from './sample/sample.component';
+import { AboutComponent } from './about.component';
 //
+
 import { RouterModule } from '@angular/router';
 import { AppRoutes } from './app.routes';
 //
 @NgModule({
-    imports: [BrowserModule, FormsModule,
-        HttpClientModule, RouterModule.forRoot(AppRoutes)],
+    imports: [
+        BrowserModule, FormsModule, RouterModule.forRoot(AppRoutes),
+    ],
     //declare all components here
-    declarations: [AppComponent],
+    declarations: [
+        AboutComponent, SampleComponent, AppComponent
+    ],
     providers: [AuthenticationService],
     bootstrap: [AppComponent]
 })
-// the root module that you bootstrap to launch the application. 
-// By convention, it is usually called AppModule
 export class AppModule { }

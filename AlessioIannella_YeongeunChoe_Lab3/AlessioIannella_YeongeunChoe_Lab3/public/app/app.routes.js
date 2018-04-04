@@ -1,20 +1,16 @@
-System.register(["./app.component"], function (exports_1, context_1) {
+System.register(["./about.component"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var app_component_1, AppRoutes;
+    var about_component_1, AppRoutes;
     return {
         setters: [
-            function (app_component_1_1) {
-                app_component_1 = app_component_1_1;
+            function (about_component_1_1) {
+                about_component_1 = about_component_1_1;
             }
         ],
         execute: function () {
             exports_1("AppRoutes", AppRoutes = [
-                {
-                    path: '',
-                    component: app_component_1.AppComponent,
-                    data: {}
-                },
+                { path: 'about', component: about_component_1.AboutComponent }
             ]);
         }
     };

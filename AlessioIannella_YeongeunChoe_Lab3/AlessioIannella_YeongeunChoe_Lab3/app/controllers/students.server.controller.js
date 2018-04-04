@@ -1,6 +1,6 @@
 ﻿// Load the module dependencies
-const Student = require('mongoose').model('Student');
-const Course = require('mongoose').model('Course');
+const Student = require('mongoose').model('students');
+const Course = require('mongoose').model('courses');
 const passport = require('passport');
 
 // Create a new error handling controller method

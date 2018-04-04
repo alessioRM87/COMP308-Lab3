@@ -53,6 +53,9 @@
     <Compile Include="server.js" />
     <Content Include="app\views\index.ejs" />
     <Content Include="package.json" />
+    <Content Include="public\app\about.template.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="public\app\app.template.css">
       <SubType>Code</SubType>
     </Content>
@@ -72,10 +75,17 @@
     <Folder Include="config\" />
     <Folder Include="config\env\" />
     <Folder Include="config\strategies\" />
+    <Folder Include="public\app\sample\" />
+    <Folder Include="typings\" />
     <Folder Include="public\" />
     <Folder Include="public\app\" />
+    <Folder Include="typings\globals\" />
+    <Folder Include="typings\globals\node\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="public\app\about.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="public\app\app.component.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -89,6 +99,15 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="public\app\bootstrap.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="public\app\sample\sample.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typings\globals\node\index.d.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typings\index.d.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>

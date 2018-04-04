@@ -38,9 +38,10 @@ System.register(["@angular/core", "@angular/common/http"], function (exports_1, 
                 };
                 AuthenticationService = __decorate([
                     core_1.Injectable(),
-                    __metadata("design:paramtypes", [http_1.HttpClient])
+                    __metadata("design:paramtypes", [typeof (_a = typeof http_1.HttpClient !== "undefined" && http_1.HttpClient) === "function" && _a || Object])
                 ], AuthenticationService);
                 return AuthenticationService;
+                var _a;
             }());
             exports_1("AuthenticationService", AuthenticationService);
         }
