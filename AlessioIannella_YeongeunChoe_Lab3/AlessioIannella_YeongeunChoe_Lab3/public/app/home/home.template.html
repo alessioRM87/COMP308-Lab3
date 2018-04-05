@@ -11,6 +11,7 @@
     <p>Program: {{user.program}}</p>
 
     <p style="height: 20px"></p>
+    <p>Registered Courses:</p>
     <table class="table">
         <thead>
             <tr>
@@ -59,4 +60,24 @@
 
                 </tr>
         </table>
+
+        <p style="height: 80px"></p>
+        <p>This is a list of all students. You can review details of them</p>
+        <p style="height: 20px"></p>
+        <span style="color:red">{{studentsError}}</span>
+        <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Student Number</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let student of students">
+                        <td>{{student.studentNumber}}</td>
+                        <td>{{student.fullName}}</td>
+                        <td><button class="btn btn-primary" style="top:20px" (click)="viewStudentInfo(student._id)">VIEW STUDENT INFO</button></td>
+                    </tr>
+            </table>
 </div>

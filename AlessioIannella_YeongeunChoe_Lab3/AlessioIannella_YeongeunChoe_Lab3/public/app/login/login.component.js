@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var authentication_service_1 = require("../authentication.service");
+var authentication_service_1 = require("../services/authentication.service");
 var LoginComponent = /** @class */ (function () {
     function LoginComponent(authenticationService, router) {
         this.authenticationService = authenticationService;

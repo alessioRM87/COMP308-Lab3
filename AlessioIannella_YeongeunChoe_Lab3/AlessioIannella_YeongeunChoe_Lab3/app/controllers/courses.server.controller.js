@@ -98,13 +98,6 @@ exports.delete = function (req, res) {
                 }
                 else {
 
-                    // REMOVE course reference from students
-
-                    var index = student.courses.indexOf(courseID);
-
-                    if (index > -1) {
-                    }
-
                     for (var i = 0; i < students.length; i++) {
                         for (var j = 0; j < students[i].courses.length; j++) {
                             if (students[i].courses[j].id === course.id) {

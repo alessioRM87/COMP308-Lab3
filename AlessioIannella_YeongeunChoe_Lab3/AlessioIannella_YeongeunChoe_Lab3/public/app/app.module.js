@@ -15,8 +15,10 @@ var app_component_1 = require("./app.component");
 var app_routes_1 = require("./app.routes");
 var home_module_1 = require("./home/home.module");
 var login_module_1 = require("./login/login.module");
-var authentication_service_1 = require("./authentication.service");
-var course_service_1 = require("./course.service");
+var studentDetails_module_1 = require("./studentDetails/studentDetails.module");
+var authentication_service_1 = require("./services/authentication.service");
+var course_service_1 = require("./services/course.service");
+var students_service_1 = require("./services/students.service");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -28,6 +30,7 @@ var AppModule = /** @class */ (function () {
                 forms_1.FormsModule,
                 home_module_1.HomeModule,
                 login_module_1.LoginModule,
+                studentDetails_module_1.StudentDetailsModule,
                 router_1.RouterModule.forRoot(app_routes_1.AppRoutes),
             ],
             declarations: [
@@ -35,7 +38,8 @@ var AppModule = /** @class */ (function () {
             ],
             providers: [
                 authentication_service_1.AuthenticationService,
-                course_service_1.CourseService
+                course_service_1.CourseService,
+                students_service_1.StudentsService
             ],
             bootstrap: [app_component_1.AppComponent]
         })

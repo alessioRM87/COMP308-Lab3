@@ -40,7 +40,7 @@ var CourseService = /** @class */ (function () {
         var body = JSON.stringify(unregisterRequest);
         return this.http.post('/api/students/dropCourse', body, httpOptions)
             .map(function (result) {
-            console.log('Course Service register to course. Result: ', result);
+            console.log('Course Service unregister from course. Result: ', result);
             return result;
         })
             .catch(this.handleError);
@@ -59,6 +59,15 @@ var CourseService = /** @class */ (function () {
     };
     CourseService.prototype.deleteCourse = function (courseID) {
         return this.http.delete('/api/courses/' + courseID);
+    };
+    CourseService.prototype.createCourse = function (courseRequest) {
+        var body = JSON.stringify(courseRequest);
+        return this.http.post('/api/courses', body, httpOptions)
+            .map(function (result) {
+            console.log('Course Service register to course. Result: ', result);
+            return result;
+        })
+            .catch(this.handleError);
     };
     CourseService = __decorate([
         core_1.Injectable(),

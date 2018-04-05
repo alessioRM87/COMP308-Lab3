@@ -38,7 +38,7 @@ export class CourseService {
 
         return this.http.post('/api/students/dropCourse', body, httpOptions)
         .map((result) => {
-            console.log('Course Service register to course. Result: ', result);
+            console.log('Course Service unregister from course. Result: ', result);
             return result;
         })
         .catch(this.handleError);
@@ -61,6 +61,17 @@ export class CourseService {
 
     deleteCourse(courseID){
         return this.http.delete('/api/courses/' + courseID);
+    }
+
+    createCourse(courseRequest){
+        let body = JSON.stringify(courseRequest);
+
+        return this.http.post('/api/courses', body, httpOptions)
+        .map((result) => {
+            console.log('Course Service register to course. Result: ', result);
+            return result;
+        })
+        .catch(this.handleError);
     }
 
 }

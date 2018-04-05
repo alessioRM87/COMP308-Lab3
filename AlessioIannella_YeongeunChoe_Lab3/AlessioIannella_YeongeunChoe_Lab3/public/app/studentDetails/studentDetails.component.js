@@ -10,28 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var authentication_service_1 = require("./services/authentication.service");
-var course_service_1 = require("./services/course.service");
 var router_1 = require("@angular/router");
-var students_service_1 = require("./services/students.service");
-var AppComponent = /** @class */ (function () {
-    function AppComponent(authenticationService, courseService, studentsService, router) {
-        this.authenticationService = authenticationService;
-        this.courseService = courseService;
-        this.studentsService = studentsService;
+var students_service_1 = require("../services/students.service");
+var StudentDetailsComponent = /** @class */ (function () {
+    function StudentDetailsComponent(router, studentsService) {
         this.router = router;
+        this.studentsService = studentsService;
+        this.student = studentsService.selectedStudent;
     }
-    AppComponent = __decorate([
+    StudentDetailsComponent = __decorate([
         core_1.Component({
-            selector: 'first-angular-application',
-            template: '<router-outlet></router-outlet>',
+            selector: 'studentDetails',
+            templateUrl: 'app/studentDetails/studentDetails.template.html',
+            styleUrls: ['app/studentDetails/studentDetails.template.css'],
         }),
-        __metadata("design:paramtypes", [authentication_service_1.AuthenticationService,
-            course_service_1.CourseService,
-            students_service_1.StudentsService,
-            router_1.Router])
-    ], AppComponent);
-    return AppComponent;
+        __metadata("design:paramtypes", [router_1.Router,
+            students_service_1.StudentsService])
+    ], StudentDetailsComponent);
+    return StudentDetailsComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.StudentDetailsComponent = StudentDetailsComponent;
+//# sourceMappingURL=studentDetails.component.js.map

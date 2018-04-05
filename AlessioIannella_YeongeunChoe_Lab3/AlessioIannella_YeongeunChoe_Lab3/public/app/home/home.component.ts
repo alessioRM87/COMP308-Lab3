@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../authentication.service';
-import { CourseService } from '../course.service';
+import { AuthenticationService } from '../services/authentication.service';
+import { CourseService } from '../services/course.service';
+import { StudentsService } from '../services/students.service';
 
 @Component({
     selector: 'home',
@@ -13,12 +14,15 @@ export class HomeComponent {
 
     public user;
     public courses;
+    public students;
     public courseError;
+    public studentsError;
 
     constructor( 
         private router: Router, 
         private authenticationService: AuthenticationService,
-        private courseService: CourseService) {
+        private courseService: CourseService,
+        private studentsService: StudentsService) {
 
         console.log('Constructor of Home. User from authenticationService: ', authenticationService.user);
         this.user = authenticationService.user;
@@ -34,6 +38,20 @@ export class HomeComponent {
             },
             () => {
                 console.log('GET COURSES COMPLETED');
+            }
+        );
+        studentsService.getStudents().subscribe(
+            (data) => {
+                console.log('Home Constructor. Students from students service: ', data);
+                this.students = data;
+            },
+            (error) => {
+                console.log('Home Constructor. Students from students service error: ', error);
+                this.studentsError = error;
+
+            },
+            () => {
+                console.log('GET STUDENTS COMPLETED');
             }
         );
     }
@@ -79,6 +97,22 @@ export class HomeComponent {
                 console.log("DROP COURSE COMPLETED");
             }
         );
+    }
+
+    viewStudentInfo(studentID){
+        console.log("VIEW STUDENT INFO CLICKED FOR STUDENT WITH ID: ", studentID);
+        this.studentsService.getStudentInfo(studentID).subscribe(
+            (data) => {
+                this.router.navigate(['studentDetails']);
+            },
+            (err) => {
+                this.studentsError = err.error.message;
+            },
+            () => {
+                console.log("GET STUDENT INFO COMPLETED");
+            }
+        );
+
     }
 
     

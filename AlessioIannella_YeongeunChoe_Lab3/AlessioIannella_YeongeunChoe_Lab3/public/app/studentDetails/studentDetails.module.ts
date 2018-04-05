@@ -5,18 +5,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule }   from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 
-import { HomeComponent } from './home.component';
-import { HomeRoutes } from './home.routes';
+import { StudentDetailsComponent } from './studentDetails.component';
+import { StudentDetailsRoutes } from './studentDetails.routes';
 
 @NgModule({
     imports: [
         BrowserModule, 
         FormsModule, 
         HttpClientModule,
-        RouterModule.forChild(HomeRoutes),
+        RouterModule.forChild(StudentDetailsRoutes),
     ],
     declarations: [
-        HomeComponent 
+        StudentDetailsComponent 
     ]
 })
-export class HomeModule { }
+export class StudentDetailsModule { }

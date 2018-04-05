@@ -7,8 +7,10 @@ import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
 import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
-import { AuthenticationService } from './authentication.service';
-import { CourseService } from './course.service';
+import { StudentDetailsModule } from './studentDetails/studentDetails.module';
+import { AuthenticationService } from './services/authentication.service';
+import { CourseService } from './services/course.service';
+import { StudentsService } from './services/students.service';
 
 @NgModule({
     imports: [
@@ -17,6 +19,7 @@ import { CourseService } from './course.service';
         FormsModule,
         HomeModule,
         LoginModule,
+        StudentDetailsModule,
         RouterModule.forRoot(AppRoutes),
     ],
     declarations: [
@@ -24,7 +27,8 @@ import { CourseService } from './course.service';
     ],
     providers: [
         AuthenticationService,
-        CourseService
+        CourseService,
+        StudentsService
     ],
     bootstrap: [AppComponent]
 })
