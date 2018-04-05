@@ -36,5 +36,7 @@ module.exports = function () {
         path.resolve('./node_modules')));
     //require('../app/routes/users.server.routes.js')(app);
     require('../app/routes/index.server.routes.js')(app);
+    require('../app/routes/courses.server.routes.js')(app);
+    require('../app/routes/students.server.routes.js')(app);
     return app;
 };
