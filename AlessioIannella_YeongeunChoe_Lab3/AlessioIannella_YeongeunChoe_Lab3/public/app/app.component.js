@@ -1,4 +1,4 @@
-System.register(["@angular/core", "./authentication.service"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/router", "./authentication.service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10,11 +10,14 @@ System.register(["@angular/core", "./authentication.service"], function (exports
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, authentication_service_1, AppComponent;
+    var core_1, router_1, authentication_service_1, AppComponent;
     return {
         setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             },
             function (authentication_service_1_1) {
                 authentication_service_1 = authentication_service_1_1;
@@ -22,18 +25,22 @@ System.register(["@angular/core", "./authentication.service"], function (exports
         ],
         execute: function () {
             AppComponent = /** @class */ (function () {
-                function AppComponent(authenticationService) {
+                function AppComponent(authenticationService, router) {
                     this.authenticationService = authenticationService;
+                    this.router = router;
                 }
                 AppComponent.prototype.login = function (studentNumber, password) {
+                    var _this = this;
                     var loginRequest = {
                         username: studentNumber,
                         passowrd: password
                     };
                     this.authenticationService.login(loginRequest).subscribe(function (data) {
                         console.log(data);
+                        _this.router.navigate(['home']);
                     }, function (err) {
-                        console.log(err);
+                        console.log("THERE WAS AN ERROR!", err);
+                        _this.loginError = err;
                     }, function () {
                         console.log("LOGIN COMPLETED");
                     });
@@ -41,30 +48,11 @@ System.register(["@angular/core", "./authentication.service"], function (exports
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'first-angular-application',
-                        // template: '<h1>I am an application component!</h1>',
-                        // templateUrl: '/app/app.template.html'
-                        //
-                        //templateUrl: '/app/about.template.html'
-                        //interpolation binding
-                        //template: '<h1>{{title}}</h1>'
-                        //property binding
-                        //template: '<button [disabled]="isButtonDisabled">My Button</button > ',
-                        //event binding
-                        //template: '<button (click)="showMessage()">Show Message</button>'
-                        //two-way binding
-                        //template: '<h1>Hello {{name}}</h1><br><input [(ngModel)] = "name" >'
-                        //
-                        //two-way binding using the template
                         templateUrl: '/app/app.template.html',
                         styleUrls: ['./app.template.css'],
                         providers: [authentication_service_1.AuthenticationService]
-                        // using a component as directive
-                        //template: '<sample-component></sample-component>'
-                        //using a service
-                        //template: '<h1>{{ title }}</h1>',
-                        //providers: [ExampleService]
                     }),
-                    __metadata("design:paramtypes", [authentication_service_1.AuthenticationService])
+                    __metadata("design:paramtypes", [authentication_service_1.AuthenticationService, router_1.Router])
                 ], AppComponent);
                 return AppComponent;
             }());

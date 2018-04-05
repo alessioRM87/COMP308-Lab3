@@ -1,17 +1,18 @@
-﻿<div>
+﻿<div class="container">
     <h1>Welcome to Alessio Iannella and Yeongeun Choe Lab 3</h1>
     <p>
         Please sign in with your given student number
     </p>
 
-    <div class="container">
+    <div >
         <p class="form-group">
             <input class="form-control" placeholder="Enter student number" [(ngModel)]="studentNumber" />
         </p>
         <div class="form-group">
             <input type="password" class="form-control" placeholder="Enter password" [(ngModel)]="password" />
         </div>
-        <button class="btn btn-primary" (click)="login(studentNumber,password)">LOGIN</button>
+        <button class="btn btn-primary" style="top:20px" (click)="login(studentNumber,password)">LOGIN</button>
+        <span style="color:red" ng-bind="loginError"></span>
     </div>
 </div>
    
