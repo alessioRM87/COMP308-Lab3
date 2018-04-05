@@ -9,11 +9,14 @@ import { AuthenticationService } from './authentication.service';
 import { RouterModule }   from '@angular/router';
 import { AppRoutes }       from './app.routes';
 
+import { HomeModule } from './home/home.module';
+
 @NgModule({
     imports: [
         BrowserModule, 
         FormsModule, 
         HttpClientModule,
+        HomeModule,
         RouterModule.forRoot(AppRoutes),
     ],
     //declare all components here
