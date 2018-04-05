@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
-import { CourseService } from '../curse.service';
+import { CourseService } from '../course.service';
 
 @Component({
     selector: 'home',
@@ -29,6 +29,7 @@ export class HomeComponent {
             },
             (error) => {
                 console.log('Home Constructor. Courses from course service error: ', error);
+                this.courseError = error;
 
             },
             () => {
@@ -53,7 +54,7 @@ export class HomeComponent {
                 this.user = data;
             },
             (error) => {
-                this.courseError = error;
+                this.courseError = error.error.message;
             },
             () => {
                 console.log("ADD COURSE COMPLETED");
@@ -62,7 +63,22 @@ export class HomeComponent {
     }
 
     dropCourse(courseID){
+        let unregisterRequest = {
+            courseID: courseID,
+            studentID: this.user._id
+        };
 
+        this.courseService.unregisterFromCourse(unregisterRequest).subscribe(
+            (data) => {
+                this.user = data;
+            },
+            (error) => {
+                this.courseError = error.error.message;
+            },
+            () => {
+                console.log("DROP COURSE COMPLETED");
+            }
+        );
     }
 
     

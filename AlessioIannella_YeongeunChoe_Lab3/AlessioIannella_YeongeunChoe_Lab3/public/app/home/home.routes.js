@@ -1,21 +1,10 @@
-System.register(["./home.component"], function (exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
-    var home_component_1, HomeRoutes;
-    return {
-        setters: [
-            function (home_component_1_1) {
-                home_component_1 = home_component_1_1;
-            }
-        ],
-        execute: function () {
-            exports_1("HomeRoutes", HomeRoutes = [
-                {
-                    path: 'home',
-                    component: home_component_1.HomeComponent
-                }
-            ]);
-        }
-    };
-});
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var home_component_1 = require("./home.component");
+exports.HomeRoutes = [
+    {
+        path: 'home',
+        component: home_component_1.HomeComponent
+    }
+];
 //# sourceMappingURL=home.routes.js.map

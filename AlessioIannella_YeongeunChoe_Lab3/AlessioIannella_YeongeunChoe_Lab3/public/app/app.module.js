@@ -1,77 +1,46 @@
-System.register(["@angular/core", "@angular/platform-browser", "@angular/router", "@angular/common/http", "@angular/forms", "./app.component", "./app.routes", "./home/home.module", "./login/login.module", "./authentication.service", "./curse.service"], function (exports_1, context_1) {
-    "use strict";
-    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-        return c > 3 && r && Object.defineProperty(target, key, r), r;
-    };
-    var __moduleName = context_1 && context_1.id;
-    var core_1, platform_browser_1, router_1, http_1, forms_1, app_component_1, app_routes_1, home_module_1, login_module_1, authentication_service_1, curse_service_1, AppModule;
-    return {
-        setters: [
-            function (core_1_1) {
-                core_1 = core_1_1;
-            },
-            function (platform_browser_1_1) {
-                platform_browser_1 = platform_browser_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
-            },
-            function (http_1_1) {
-                http_1 = http_1_1;
-            },
-            function (forms_1_1) {
-                forms_1 = forms_1_1;
-            },
-            function (app_component_1_1) {
-                app_component_1 = app_component_1_1;
-            },
-            function (app_routes_1_1) {
-                app_routes_1 = app_routes_1_1;
-            },
-            function (home_module_1_1) {
-                home_module_1 = home_module_1_1;
-            },
-            function (login_module_1_1) {
-                login_module_1 = login_module_1_1;
-            },
-            function (authentication_service_1_1) {
-                authentication_service_1 = authentication_service_1_1;
-            },
-            function (curse_service_1_1) {
-                curse_service_1 = curse_service_1_1;
-            }
-        ],
-        execute: function () {
-            AppModule = /** @class */ (function () {
-                function AppModule() {
-                }
-                AppModule = __decorate([
-                    core_1.NgModule({
-                        imports: [
-                            platform_browser_1.BrowserModule,
-                            http_1.HttpClientModule,
-                            forms_1.FormsModule,
-                            home_module_1.HomeModule,
-                            login_module_1.LoginModule,
-                            router_1.RouterModule.forRoot(app_routes_1.AppRoutes),
-                        ],
-                        declarations: [
-                            app_component_1.AppComponent
-                        ],
-                        providers: [
-                            authentication_service_1.AuthenticationService,
-                            curse_service_1.CourseService
-                        ],
-                        bootstrap: [app_component_1.AppComponent]
-                    })
-                ], AppModule);
-                return AppModule;
-            }());
-            exports_1("AppModule", AppModule);
-        }
-    };
-});
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
+var router_1 = require("@angular/router");
+var http_1 = require("@angular/common/http");
+var forms_1 = require("@angular/forms");
+var app_component_1 = require("./app.component");
+var app_routes_1 = require("./app.routes");
+var home_module_1 = require("./home/home.module");
+var login_module_1 = require("./login/login.module");
+var authentication_service_1 = require("./authentication.service");
+var course_service_1 = require("./course.service");
+var AppModule = /** @class */ (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+                http_1.HttpClientModule,
+                forms_1.FormsModule,
+                home_module_1.HomeModule,
+                login_module_1.LoginModule,
+                router_1.RouterModule.forRoot(app_routes_1.AppRoutes),
+            ],
+            declarations: [
+                app_component_1.AppComponent
+            ],
+            providers: [
+                authentication_service_1.AuthenticationService,
+                course_service_1.CourseService
+            ],
+            bootstrap: [app_component_1.AppComponent]
+        })
+    ], AppModule);
+    return AppModule;
+}());
+exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

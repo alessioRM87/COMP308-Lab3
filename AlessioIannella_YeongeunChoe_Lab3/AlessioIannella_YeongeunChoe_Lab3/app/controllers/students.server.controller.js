@@ -289,10 +289,12 @@ exports.dropCourse = function (req, res) {
             }
 
             var courseAdded = false;
+            var index = -1;
 
             for (var i = 0; i < student.courses.length; i++) {
                 if (student.courses[i]._id == courseID) {
                     courseAdded = true;
+                    index = i;
                     break;
                 }
             }
@@ -302,8 +304,6 @@ exports.dropCourse = function (req, res) {
                     message: 'Student is not registered to the course'
                 });
             }
-
-            var index = student.courses.indexOf(courseID);
 
             if (index > -1) {
                 student.courses.splice(index, 1);

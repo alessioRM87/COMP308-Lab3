@@ -38,7 +38,7 @@ export class LoginComponent {
             },
             err => {
                 console.log("THERE WAS AN ERROR!", err);
-                this.loginError = err;
+                this.loginError = err.error.message;
             },
             () => {
                 console.log("LOGIN COMPLETED")

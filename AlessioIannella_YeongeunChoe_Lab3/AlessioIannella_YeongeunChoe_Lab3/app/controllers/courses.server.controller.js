@@ -48,6 +48,8 @@ exports.courseByID = function (req, res, next, id) {
     Course.findById(id).populate('creator').exec((err, course) => {
         if (err) return next(err);
         if (!course) return next(new Error('Failed to load course ' + id));
+        course.creator.password = undefined;
+        course.creator.salt = undefined;
         req.course = course;
         next();
     });

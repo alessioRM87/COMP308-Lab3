@@ -8,7 +8,7 @@ import { AppRoutes } from './app.routes';
 import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
 import { AuthenticationService } from './authentication.service';
-import { CourseService } from './curse.service';
+import { CourseService } from './course.service';
 
 @NgModule({
     imports: [

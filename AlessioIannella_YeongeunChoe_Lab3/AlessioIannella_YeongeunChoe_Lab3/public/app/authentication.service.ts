@@ -14,6 +14,11 @@ export class AuthenticationService {
 
     constructor(private http: HttpClient) { }
 
+    private handleError(error: Response) {
+        console.error(error);
+        return Observable.throw(error || 'Server error');
+    }
+
     isLoggedIn(){
         return (!!this.user);
     }
@@ -25,18 +30,21 @@ export class AuthenticationService {
         .map((result) => {
             console.log('Authentication Service login. Result: ', result);
             this.user = result;
-            console.log('Saved user in authentication service: ', this.user);
             return result;
         })
-        .catch((error) => {
-            return Observable.throw(error.json().message || 'Server error');
-        });
+        .catch(this.handleError);
     }
 
     register(registerRequest) {
         let body = JSON.stringify(registerRequest);
 
-        return this.http.post('/api/auth/signup', body, httpOptions);
+        return this.http.post('/api/auth/signup', body, httpOptions)
+        .map((result) => {
+            console.log('Authentication Service register. Result: ', result);
+            this.user = result;
+            return result;
+        })
+        .catch(this.handleError);;
     }
 
     logout(){

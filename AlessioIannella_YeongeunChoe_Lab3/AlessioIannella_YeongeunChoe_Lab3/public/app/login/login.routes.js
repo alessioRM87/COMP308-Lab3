@@ -1,19 +1,8 @@
-System.register(["./login.component"], function (exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
-    var login_component_1, LoginRoutes;
-    return {
-        setters: [
-            function (login_component_1_1) {
-                login_component_1 = login_component_1_1;
-            }
-        ],
-        execute: function () {
-            exports_1("LoginRoutes", LoginRoutes = [{
-                    path: '',
-                    component: login_component_1.LoginComponent,
-                }]);
-        }
-    };
-});
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var login_component_1 = require("./login.component");
+exports.LoginRoutes = [{
+        path: '',
+        component: login_component_1.LoginComponent,
+    }];
 //# sourceMappingURL=login.routes.js.map

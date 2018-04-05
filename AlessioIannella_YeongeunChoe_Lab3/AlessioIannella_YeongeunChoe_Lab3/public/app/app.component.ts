@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { AuthenticationService } from './authentication.service';
-import { CourseService } from './curse.service';
+import { CourseService } from './course.service';
 import { Router } from '@angular/router';
 
 @Component({
