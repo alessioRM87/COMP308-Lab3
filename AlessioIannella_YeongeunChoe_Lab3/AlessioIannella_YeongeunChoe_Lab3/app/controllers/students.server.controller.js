@@ -219,7 +219,7 @@ exports.addCourse = function (req, res) {
             var alreadyAdded = false;
 
             for (var i = 0; i < student.courses.length; i++) {
-                if (student.courses[i] == courseID) {
+                if (student.courses[i]._id == courseID) {
                     alreadyAdded = true;
                     break;
                 }
@@ -291,7 +291,7 @@ exports.dropCourse = function (req, res) {
             var courseAdded = false;
 
             for (var i = 0; i < student.courses.length; i++) {
-                if (student.courses[i] == courseID) {
+                if (student.courses[i]._id == courseID) {
                     courseAdded = true;
                     break;
                 }
