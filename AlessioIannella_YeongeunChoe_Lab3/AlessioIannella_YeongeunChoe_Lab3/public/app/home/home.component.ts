@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'first-angular-application',
-    templateUrl: 'home.template.html',
-    styleUrls: ['home.template.css'],
+    selector: 'home',
+    templateUrl: 'app/home/home.template.html',
+    styleUrls: ['app/home/home.template.css'],
     providers: []
 })
 

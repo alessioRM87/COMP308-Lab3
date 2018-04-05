@@ -12,7 +12,7 @@ import { HomeRoutes } from './home.routes';
         BrowserModule, 
         FormsModule, 
         HttpClientModule,
-        RouterModule.forRoot(HomeRoutes),
+        RouterModule.forChild(HomeRoutes),
     ],
     //declare all components here
     declarations: [

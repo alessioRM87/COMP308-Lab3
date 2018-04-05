@@ -27,9 +27,9 @@ System.register(["@angular/core", "@angular/router"], function (exports_1, conte
                 }
                 HomeComponent = __decorate([
                     core_1.Component({
-                        selector: 'first-angular-application',
-                        templateUrl: 'home.template.html',
-                        styleUrls: ['home.template.css'],
+                        selector: 'home',
+                        templateUrl: 'app/home/home.template.html',
+                        styleUrls: ['app/home/home.template.css'],
                         providers: []
                     }),
                     __metadata("design:paramtypes", [router_1.Router])

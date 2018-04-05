@@ -42,7 +42,7 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/forms",
                             platform_browser_1.BrowserModule,
                             forms_1.FormsModule,
                             http_1.HttpClientModule,
-                            router_1.RouterModule.forRoot(home_routes_1.HomeRoutes),
+                            router_1.RouterModule.forChild(home_routes_1.HomeRoutes),
                         ],
                         //declare all components here
                         declarations: [

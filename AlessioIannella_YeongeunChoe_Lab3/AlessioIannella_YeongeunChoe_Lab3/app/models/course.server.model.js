@@ -26,6 +26,5 @@ const CourseSchema = new Schema({
         type: Schema.ObjectId,
         ref: 'Student'
     }
-},{collection:'courses'});
-
-mongoose.model('courses',CourseSchema);
+});
+mongoose.model('Course', CourseSchema);

@@ -57,8 +57,7 @@ const StudentSchema = new Schema({
         type: Date,
         default: Date.now
     }
-},{collection:'students'});
-
+});
 
 // Set the 'fullname' virtual property
 StudentSchema.virtual('fullName').get(function () {
@@ -96,4 +95,5 @@ StudentSchema.set('toJSON', {
     virtuals: true
 });
 
-mongoose.model('students',StudentSchema);
+// Create the 'User' model out of the 'UserSchema'
+mongoose.model('Student', StudentSchema);
