@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/platform-browser", "@angular/router", "@angular/common/http", "@angular/forms", "./app.component", "./app.routes", "./home/home.module", "./login/login.module", "./authentication.service"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/platform-browser", "@angular/router", "@angular/common/http", "@angular/forms", "./app.component", "./app.routes", "./home/home.module", "./login/login.module", "./authentication.service", "./curse.service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -7,7 +7,7 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/router"
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, platform_browser_1, router_1, http_1, forms_1, app_component_1, app_routes_1, home_module_1, login_module_1, authentication_service_1, AppModule;
+    var core_1, platform_browser_1, router_1, http_1, forms_1, app_component_1, app_routes_1, home_module_1, login_module_1, authentication_service_1, curse_service_1, AppModule;
     return {
         setters: [
             function (core_1_1) {
@@ -39,6 +39,9 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/router"
             },
             function (authentication_service_1_1) {
                 authentication_service_1 = authentication_service_1_1;
+            },
+            function (curse_service_1_1) {
+                curse_service_1 = curse_service_1_1;
             }
         ],
         execute: function () {
@@ -59,7 +62,8 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/router"
                             app_component_1.AppComponent
                         ],
                         providers: [
-                            authentication_service_1.AuthenticationService
+                            authentication_service_1.AuthenticationService,
+                            curse_service_1.CourseService
                         ],
                         bootstrap: [app_component_1.AppComponent]
                     })

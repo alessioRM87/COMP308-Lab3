@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 
@@ -7,7 +7,6 @@ import { AuthenticationService } from '../authentication.service';
     selector: 'login',
     templateUrl: 'app/login/login.template.html',
     styleUrls: ['app/login/login.template.css'],
-    providers: [AuthenticationService]
 })
 
 export class LoginComponent {
@@ -19,6 +18,14 @@ export class LoginComponent {
 
     constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
+    ngOnInit() {
+        console.log('OnInit of LoginComponent. User is authenticated: ', this.authenticationService.isLoggedIn());
+
+        if (this.authenticationService.isLoggedIn()){
+            this.router.navigate(['home']);
+        }
+    } 
+
     login(studentNumber, password) {
         var loginRequest = {
             username: studentNumber,
@@ -27,7 +34,6 @@ export class LoginComponent {
 
         this.authenticationService.login(loginRequest).subscribe(
             data => {
-                console.log(data);
                 this.router.navigate(['home']);
             },
             err => {

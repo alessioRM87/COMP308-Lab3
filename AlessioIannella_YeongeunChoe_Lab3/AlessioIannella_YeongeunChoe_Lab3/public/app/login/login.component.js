@@ -29,6 +29,12 @@ System.register(["@angular/core", "@angular/router", "../authentication.service"
                     this.authenticationService = authenticationService;
                     this.router = router;
                 }
+                LoginComponent.prototype.ngOnInit = function () {
+                    console.log('OnInit of LoginComponent. User is authenticated: ', this.authenticationService.isLoggedIn());
+                    if (this.authenticationService.isLoggedIn()) {
+                        this.router.navigate(['home']);
+                    }
+                };
                 LoginComponent.prototype.login = function (studentNumber, password) {
                     var _this = this;
                     var loginRequest = {
@@ -36,7 +42,6 @@ System.register(["@angular/core", "@angular/router", "../authentication.service"
                         password: password
                     };
                     this.authenticationService.login(loginRequest).subscribe(function (data) {
-                        console.log(data);
                         _this.router.navigate(['home']);
                     }, function (err) {
                         console.log("THERE WAS AN ERROR!", err);
@@ -50,7 +55,6 @@ System.register(["@angular/core", "@angular/router", "../authentication.service"
                         selector: 'login',
                         templateUrl: 'app/login/login.template.html',
                         styleUrls: ['app/login/login.template.css'],
-                        providers: [authentication_service_1.AuthenticationService]
                     }),
                     __metadata("design:paramtypes", [authentication_service_1.AuthenticationService, router_1.Router])
                 ], LoginComponent);

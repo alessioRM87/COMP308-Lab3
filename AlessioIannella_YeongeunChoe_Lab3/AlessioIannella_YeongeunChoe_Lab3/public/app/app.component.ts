@@ -1,5 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { AuthenticationService } from './authentication.service';
+import { CourseService } from './curse.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,5 +8,8 @@ import { Router } from '@angular/router';
     template: '<router-outlet></router-outlet>',
 })
 export class AppComponent {
-    constructor(private _authenticationService: AuthenticationService, private router: Router) { }
+    constructor(
+        private authenticationService: AuthenticationService,
+        private courseService: CourseService, 
+        private router: Router) { }
 }

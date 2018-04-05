@@ -1,3 +1,57 @@
 <div>
-    THIS IS THE HOMEPAGE!
+    <h1>Welcome back, {{user.firstName}} {{user.lastName}}!</h1>
+    <p>You can review your info with your registered courses.</p>
+
+    <p></p>
+    <p></p>
+    <p></p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Course Code</th>
+                <th scope="col">Course Name</th>
+                <th scope="col">Section</th>
+                <th scope="col">Semester</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let registeredCourse of user.courses">
+                <td>{{registeredCourse.courseCode}}</td>
+                <td>{{registeredCourse.courseName}}</td>
+                <td>{{registeredCourse.section}}</td>
+                <td>{{registeredCourse.semester}}</td>
+            </tr>
+    </table>
+
+    <p></p>
+    <p></p>
+    <p>This is a list of all courses. You can review details of them, register or unregister to them.</p>
+    <p>If you cannot find the course you want to register, please create it here:</p>
+    <button class="btn btn-primary">CREATE NEW COURSE</button>
+    <p></p>
+    <span style="color:red">{{courseError}}</span>
+    <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Course Code</th>
+                    <th scope="col">Course Name</th>
+                    <th scope="col">Section</th>
+                    <th scope="col">Semester</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Register</th>
+                    <th scope="col">Unregister</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let course of courses">
+                    <td>{{course.courseCode}}</td>
+                    <td>{{course.courseName}}</td>
+                    <td>{{course.semester}}</td>
+                    <td>{{course.section}}</td>
+                    <td><button class="btn btn-primary" style="top:20px" (click)="viewDetails(course._id)">VIEW DETAILS</button></td>
+                    <td><button class="btn btn-primary" style="top:20px" (click)="addCourse(course._id)">ADD COURSE</button></td>
+                    <td><button class="btn btn-primary" style="top:20px" (click)="dropCourse(course._id)">DROP COURSE</button></td>
+
+                </tr>
+        </table>
 </div>

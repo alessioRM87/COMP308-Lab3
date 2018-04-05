@@ -8,6 +8,7 @@ import { AppRoutes } from './app.routes';
 import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
 import { AuthenticationService } from './authentication.service';
+import { CourseService } from './curse.service';
 
 @NgModule({
     imports: [
@@ -22,7 +23,8 @@ import { AuthenticationService } from './authentication.service';
         AppComponent
     ],
     providers: [
-        AuthenticationService
+        AuthenticationService,
+        CourseService
     ],
     bootstrap: [AppComponent]
 })

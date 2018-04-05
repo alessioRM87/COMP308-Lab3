@@ -10,7 +10,7 @@ System.register(["rxjs/Rx", "@angular/core", "@angular/common/http", "rxjs/Obser
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, http_1, Observable_1, httpOptions, AuthenticationService;
+    var core_1, http_1, Observable_1, httpOptions, CourseService;
     return {
         setters: [
             function (_1) {
@@ -29,43 +29,32 @@ System.register(["rxjs/Rx", "@angular/core", "@angular/common/http", "rxjs/Obser
             httpOptions = {
                 headers: new http_1.HttpHeaders({ 'Content-Type': 'application/json' })
             };
-            AuthenticationService = /** @class */ (function () {
-                function AuthenticationService(http) {
+            CourseService = /** @class */ (function () {
+                function CourseService(http) {
                     this.http = http;
-                    this.user = window['user'];
                 }
-                AuthenticationService.prototype.isLoggedIn = function () {
-                    return (!!this.user);
+                CourseService.prototype.getCourses = function () {
+                    return this.http.get('/api/courses');
                 };
-                AuthenticationService.prototype.login = function (loginRequest) {
-                    var _this = this;
-                    var body = JSON.stringify(loginRequest);
-                    return this.http.post('/api/auth/signin', body, httpOptions)
+                CourseService.prototype.registerToCourse = function (registerRequest) {
+                    var body = JSON.stringify(registerRequest);
+                    return this.http.post('/api/students/addCourse', body, httpOptions)
                         .map(function (result) {
-                        console.log('Authentication Service login. Result: ', result);
-                        _this.user = result;
-                        console.log('Saved user in authentication service: ', _this.user);
+                        console.log('Course Service register to course. Result: ', result);
                         return result;
                     })
                         .catch(function (error) {
                         return Observable_1.Observable.throw(error.json().message || 'Server error');
                     });
                 };
-                AuthenticationService.prototype.register = function (registerRequest) {
-                    var body = JSON.stringify(registerRequest);
-                    return this.http.post('/api/auth/signup', body, httpOptions);
-                };
-                AuthenticationService.prototype.logout = function () {
-                    this.user = null;
-                };
-                AuthenticationService = __decorate([
+                CourseService = __decorate([
                     core_1.Injectable(),
                     __metadata("design:paramtypes", [http_1.HttpClient])
-                ], AuthenticationService);
-                return AuthenticationService;
+                ], CourseService);
+                return CourseService;
             }());
-            exports_1("AuthenticationService", AuthenticationService);
+            exports_1("CourseService", CourseService);
         }
     };
 });
-//# sourceMappingURL=authentication.service.js.map
+//# sourceMappingURL=curse.service.js.map

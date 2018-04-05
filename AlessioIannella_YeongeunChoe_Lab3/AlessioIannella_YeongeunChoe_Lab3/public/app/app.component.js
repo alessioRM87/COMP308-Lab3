@@ -1,4 +1,4 @@
-System.register(["@angular/core", "./authentication.service", "@angular/router"], function (exports_1, context_1) {
+System.register(["@angular/core", "./authentication.service", "./curse.service", "@angular/router"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10,7 +10,7 @@ System.register(["@angular/core", "./authentication.service", "@angular/router"]
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, authentication_service_1, router_1, AppComponent;
+    var core_1, authentication_service_1, curse_service_1, router_1, AppComponent;
     return {
         setters: [
             function (core_1_1) {
@@ -19,14 +19,18 @@ System.register(["@angular/core", "./authentication.service", "@angular/router"]
             function (authentication_service_1_1) {
                 authentication_service_1 = authentication_service_1_1;
             },
+            function (curse_service_1_1) {
+                curse_service_1 = curse_service_1_1;
+            },
             function (router_1_1) {
                 router_1 = router_1_1;
             }
         ],
         execute: function () {
             AppComponent = /** @class */ (function () {
-                function AppComponent(_authenticationService, router) {
-                    this._authenticationService = _authenticationService;
+                function AppComponent(authenticationService, courseService, router) {
+                    this.authenticationService = authenticationService;
+                    this.courseService = courseService;
                     this.router = router;
                 }
                 AppComponent = __decorate([
@@ -34,7 +38,9 @@ System.register(["@angular/core", "./authentication.service", "@angular/router"]
                         selector: 'first-angular-application',
                         template: '<router-outlet></router-outlet>',
                     }),
-                    __metadata("design:paramtypes", [authentication_service_1.AuthenticationService, router_1.Router])
+                    __metadata("design:paramtypes", [authentication_service_1.AuthenticationService,
+                        curse_service_1.CourseService,
+                        router_1.Router])
                 ], AppComponent);
                 return AppComponent;
             }());

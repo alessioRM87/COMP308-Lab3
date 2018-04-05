@@ -44,12 +44,9 @@ System.register(["@angular/core", "@angular/platform-browser", "@angular/forms",
                             http_1.HttpClientModule,
                             router_1.RouterModule.forChild(home_routes_1.HomeRoutes),
                         ],
-                        //declare all components here
                         declarations: [
                             home_component_1.HomeComponent
-                        ],
-                        providers: [],
-                        bootstrap: [home_component_1.HomeComponent]
+                        ]
                     })
                 ], HomeModule);
                 return HomeModule;
