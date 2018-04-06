@@ -118,7 +118,7 @@ exports.delete = function (req, res) {
 //The hasAuthorization() middleware check if the current student has Admin authorization
 exports.hasAuthorization = function (req, res, next) {
 
-    if (!req.user.id == req.course.creator.id) {
+    if (req.user.id != req.course.creator.id) {
         return res.status(403).send({
             message: 'User is not authorized'
         });

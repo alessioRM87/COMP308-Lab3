@@ -30,6 +30,7 @@ var AuthenticationService = /** @class */ (function () {
     };
     AuthenticationService.prototype.login = function (loginRequest) {
         var _this = this;
+        console.log("LOGIN request: ", loginRequest);
         var body = JSON.stringify(loginRequest);
         return this.http.post('/api/auth/signin', body, httpOptions)
             .map(function (result) {

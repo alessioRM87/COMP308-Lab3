@@ -24,6 +24,9 @@ export class AuthenticationService {
     }
 
     login(loginRequest) {
+
+        console.log("LOGIN request: ", loginRequest);
+
         let body = JSON.stringify(loginRequest);
 
         return this.http.post('/api/auth/signin', body, httpOptions)
