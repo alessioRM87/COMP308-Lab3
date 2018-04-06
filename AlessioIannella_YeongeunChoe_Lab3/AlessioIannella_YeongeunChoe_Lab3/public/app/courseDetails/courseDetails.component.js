@@ -21,8 +21,12 @@ var CourseDetailsComponent = /** @class */ (function () {
         this.course = courseService.selectedCourse;
         this.students = studentsService.registeredStudents;
     }
+    CourseDetailsComponent.prototype.clearErrors = function () {
+        this.error = "";
+    };
     CourseDetailsComponent.prototype.updateCourse = function (courseID, courseCode, courseName, section, semester) {
         var _this = this;
+        this.clearErrors();
         console.log("UPDATE COURSE CLICKED: ", courseCode, courseName, section, semester);
         var updateRequest = {
             courseCode: courseCode,
@@ -40,6 +44,7 @@ var CourseDetailsComponent = /** @class */ (function () {
     };
     CourseDetailsComponent.prototype.deleteCourse = function (courseID) {
         var _this = this;
+        this.clearErrors();
         console.log("DELETE COURSE CLICKED: ", courseID);
         this.courseService.deleteCourseByID(courseID).subscribe(function (data) {
             console.log("COURSE DELETED SUCCESS");

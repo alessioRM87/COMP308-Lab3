@@ -26,7 +26,14 @@ export class CourseDetailsComponent {
 
     }
 
+    clearErrors(){
+        this.error = "";
+    }
+
     updateCourse(courseID, courseCode, courseName, section, semester){
+
+        this.clearErrors();
+
         console.log("UPDATE COURSE CLICKED: ", courseCode, courseName, section, semester);
 
         let updateRequest = {
@@ -50,6 +57,9 @@ export class CourseDetailsComponent {
     }
 
     deleteCourse(courseID){
+
+        this.clearErrors();
+
         console.log("DELETE COURSE CLICKED: ", courseID);
 
         this.courseService.deleteCourseByID(courseID).subscribe(

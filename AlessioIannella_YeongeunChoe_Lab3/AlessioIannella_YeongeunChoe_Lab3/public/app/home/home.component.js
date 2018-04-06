@@ -42,8 +42,13 @@ var HomeComponent = /** @class */ (function () {
             console.log('GET STUDENTS COMPLETED');
         });
     }
+    HomeComponent.prototype.clearErrors = function () {
+        this.courseError = "";
+        this.studentsError = "";
+    };
     HomeComponent.prototype.viewDetails = function (courseID) {
         var _this = this;
+        this.clearErrors();
         console.log("VIEW DETAILS CLICKED FOR COURSE WITH ID: ", courseID);
         this.courseService.getCourseInfo(courseID).subscribe(function (course) {
             _this.studentsService.getStudentsInCourse(courseID).subscribe(function (students) {
@@ -61,6 +66,7 @@ var HomeComponent = /** @class */ (function () {
     };
     HomeComponent.prototype.addCourse = function (courseID) {
         var _this = this;
+        this.clearErrors();
         var registerRequest = {
             courseID: courseID,
             studentID: this.user._id
@@ -75,6 +81,7 @@ var HomeComponent = /** @class */ (function () {
     };
     HomeComponent.prototype.dropCourse = function (courseID) {
         var _this = this;
+        this.clearErrors();
         var unregisterRequest = {
             courseID: courseID,
             studentID: this.user._id
@@ -89,6 +96,7 @@ var HomeComponent = /** @class */ (function () {
     };
     HomeComponent.prototype.viewStudentInfo = function (studentID) {
         var _this = this;
+        this.clearErrors();
         console.log("VIEW STUDENT INFO CLICKED FOR STUDENT WITH ID: ", studentID);
         this.studentsService.getStudentInfo(studentID).subscribe(function (data) {
             _this.router.navigate(['studentDetails']);

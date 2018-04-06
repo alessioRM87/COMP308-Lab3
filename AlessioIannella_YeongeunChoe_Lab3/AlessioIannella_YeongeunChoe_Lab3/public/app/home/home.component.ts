@@ -56,7 +56,15 @@ export class HomeComponent {
         );
     }
 
+    clearErrors(){
+        this.courseError = "";
+        this.studentsError = "";
+    }
+
     viewDetails(courseID){
+
+        this.clearErrors();
+
         console.log("VIEW DETAILS CLICKED FOR COURSE WITH ID: ", courseID);
         this.courseService.getCourseInfo(courseID).subscribe(
             (course) => {
@@ -83,6 +91,8 @@ export class HomeComponent {
 
     addCourse(courseID){
 
+        this.clearErrors();
+
         let registerRequest = {
             courseID: courseID,
             studentID: this.user._id
@@ -102,6 +112,9 @@ export class HomeComponent {
     }
 
     dropCourse(courseID){
+
+        this.clearErrors();
+
         let unregisterRequest = {
             courseID: courseID,
             studentID: this.user._id
@@ -121,6 +134,9 @@ export class HomeComponent {
     }
 
     viewStudentInfo(studentID){
+
+        this.clearErrors();
+
         console.log("VIEW STUDENT INFO CLICKED FOR STUDENT WITH ID: ", studentID);
         this.studentsService.getStudentInfo(studentID).subscribe(
             (data) => {

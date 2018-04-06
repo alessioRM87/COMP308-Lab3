@@ -15,5 +15,6 @@
             <input class="form-control" placeholder="Enter Semester" [(ngModel)]="semester" />
         </div>
         <button class="btn btn-primary" style="top:20px" (click)="createCourse(courseCode, courseName, section, semester)">Create New Course</button>
+        <span style="color:red">{{courseError}}</span>
     </div>
 </div>

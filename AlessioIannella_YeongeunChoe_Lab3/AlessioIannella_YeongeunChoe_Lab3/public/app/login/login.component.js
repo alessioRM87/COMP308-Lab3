@@ -23,8 +23,12 @@ var LoginComponent = /** @class */ (function () {
             this.router.navigate(['home']);
         }
     };
+    LoginComponent.prototype.clearErrors = function () {
+        this.loginError = "";
+    };
     LoginComponent.prototype.login = function (studentNumber, password) {
         var _this = this;
+        this.clearErrors();
         var loginRequest = {
             username: studentNumber,
             password: password

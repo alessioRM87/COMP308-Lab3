@@ -4,15 +4,15 @@
         Please sign in with your given student number
     </p>
 
-    <div >
+    <form >
         <p class="form-group">
             <input class="form-control" placeholder="Enter student number" [(ngModel)]="studentNumber" required/>
         </p>
         <div class="form-group">
             <input type="password" class="form-control" placeholder="Enter password" [(ngModel)]="password" required/>
         </div>
-        <button class="btn btn-primary" style="top:20px" (click)="login(studentNumber,password)">LOGIN</button>
-        <span style="color:red" ng-bind="loginError"></span>
-    </div>
+        <button class="btn btn-primary" type="submit" style="top:20px" (click)="login(studentNumber,password)">LOGIN</button>
+        <span style="color:red">{{loginError}}</span>
+    </form>
 </div>
    

@@ -21,10 +21,21 @@ export class CreateCourseComponent {
     constructor(
         private router: Router,
         private authenticationService: AuthenticationService,
-        private courseService: CourseService) { }
+        private courseService: CourseService) { 
+        
+    }
+
+    clearErrors(){
+        this.courseError = "";
+    }
+
+
 
 
     createCourse(courseCode, courseName, section, semester) {
+
+        this.clearErrors();
+
         var courseRequest = {
             courseCode: courseCode,
             courseName: courseName,

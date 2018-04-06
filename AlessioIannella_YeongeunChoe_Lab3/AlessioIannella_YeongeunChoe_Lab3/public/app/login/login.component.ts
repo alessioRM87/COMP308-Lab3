@@ -24,9 +24,16 @@ export class LoginComponent {
         if (this.authenticationService.isLoggedIn()){
             this.router.navigate(['home']);
         }
-    } 
+    }
+    
+    clearErrors(){
+        this.loginError = "";
+    }
 
     login(studentNumber, password) {
+
+        this.clearErrors();
+
         var loginRequest = {
             username: studentNumber,
             password: password

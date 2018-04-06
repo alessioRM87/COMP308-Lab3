@@ -19,8 +19,12 @@ var CreateCourseComponent = /** @class */ (function () {
         this.authenticationService = authenticationService;
         this.courseService = courseService;
     }
+    CreateCourseComponent.prototype.clearErrors = function () {
+        this.courseError = "";
+    };
     CreateCourseComponent.prototype.createCourse = function (courseCode, courseName, section, semester) {
         var _this = this;
+        this.clearErrors();
         var courseRequest = {
             courseCode: courseCode,
             courseName: courseName,
