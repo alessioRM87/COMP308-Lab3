@@ -72,20 +72,68 @@
     <Compile Include="public\app\app.module.js" />
     <Compile Include="public\app\app.routes.js" />
     <Compile Include="public\app\bootstrap.js" />
+    <Compile Include="public\app\courseDetails\courseDetails.component.js" />
+    <Compile Include="public\app\courseDetails\courseDetails.module.js" />
+    <Compile Include="public\app\courseDetails\courseDetails.routes.js" />
+    <Compile Include="public\app\home\home.component.js" />
+    <Compile Include="public\app\home\home.module.js" />
+    <Compile Include="public\app\home\home.routes.js" />
+    <Compile Include="public\app\login\login.component.js" />
+    <Compile Include="public\app\login\login.module.js" />
+    <Compile Include="public\app\login\login.routes.js" />
+    <Compile Include="public\app\services\authentication.service.js" />
+    <Compile Include="public\app\services\course.service.js" />
+    <Compile Include="public\app\services\students.service.js" />
+    <Compile Include="public\app\studentDetails\studentDetails.component.js" />
+    <Compile Include="public\app\studentDetails\studentDetails.module.js" />
+    <Compile Include="public\app\studentDetails\studentDetails.routes.js" />
     <Compile Include="public\systemjs.config.js" />
     <Compile Include="server.js" />
+    <Content Include=".vscode\launch.json" />
+    <Content Include=".vs\ProjectSettings.json" />
+    <Content Include=".vs\slnx.sqlite" />
+    <Content Include=".vs\VSWorkspaceState.json" />
     <Content Include="app\views\index.ejs" />
+    <Content Include="bin\Microsoft.NodejsTools.WebRole.dll" />
+    <Content Include="obj\Debug\AlessioIannella_YeongeunChoe_Lab3.njsproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\AlessioIannella_YeongeunChoe_Lab3.njsproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\AlessioIannella_YeongeunChoe_Lab3.njsprojResolveAssemblyReference.cache" />
+    <Content Include="obj\Debug\Tsc93a6490e.out" />
+    <Content Include="obj\Release\AlessioIannella_YeongeunChoe_Lab3.njsproj.CoreCompileInputs.cache" />
     <Content Include="package.json" />
     <Content Include="public\app\app.component.js.map" />
     <Content Include="public\app\app.module.js.map" />
     <Content Include="public\app\app.routes.js.map" />
     <Content Include="public\app\bootstrap.js.map" />
+    <Content Include="public\app\courseDetails\courseDetails.component.js.map" />
+    <Content Include="public\app\courseDetails\courseDetails.module.js.map" />
+    <Content Include="public\app\courseDetails\courseDetails.routes.js.map" />
+    <Content Include="public\app\courseDetails\courseDetails.template.css" />
+    <Content Include="public\app\courseDetails\courseDetails.template.html" />
     <Content Include="public\app\createCourse\createCourse.template.css">
       <SubType>Code</SubType>
     </Content>
     <Content Include="public\app\createCourse\createCourse.template.html">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="public\app\home\home.component.js.map" />
+    <Content Include="public\app\home\home.module.js.map" />
+    <Content Include="public\app\home\home.routes.js.map" />
+    <Content Include="public\app\home\home.template.css" />
+    <Content Include="public\app\home\home.template.html" />
+    <Content Include="public\app\login\login.component.js.map" />
+    <Content Include="public\app\login\login.module.js.map" />
+    <Content Include="public\app\login\login.routes.js.map" />
+    <Content Include="public\app\login\login.template.css" />
+    <Content Include="public\app\login\login.template.html" />
+    <Content Include="public\app\services\authentication.service.js.map" />
+    <Content Include="public\app\services\course.service.js.map" />
+    <Content Include="public\app\services\students.service.js.map" />
+    <Content Include="public\app\studentDetails\studentDetails.component.js.map" />
+    <Content Include="public\app\studentDetails\studentDetails.module.js.map" />
+    <Content Include="public\app\studentDetails\studentDetails.routes.js.map" />
+    <Content Include="public\app\studentDetails\studentDetails.template.css" />
+    <Content Include="public\app\studentDetails\studentDetails.template.html" />
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />
     <Content Include="typings.json" />
@@ -95,17 +143,30 @@
     <Content Include="typings\globals\socket.io-client\typings.json" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include=".vscode\" />
+    <Folder Include=".vs\" />
+    <Folder Include=".vs\AlessioIannella_YeongeunChoe_Lab3\" />
+    <Folder Include=".vs\AlessioIannella_YeongeunChoe_Lab3\v15\" />
     <Folder Include="app\" />
     <Folder Include="app\controllers\" />
     <Folder Include="app\models\" />
     <Folder Include="app\routes\" />
     <Folder Include="app\views\" />
+    <Folder Include="bin\" />
     <Folder Include="config\" />
     <Folder Include="config\env\" />
     <Folder Include="config\strategies\" />
+    <Folder Include="obj\" />
+    <Folder Include="obj\Debug\" />
+    <Folder Include="obj\Release\" />
     <Folder Include="public\" />
     <Folder Include="public\app\" />
+    <Folder Include="public\app\courseDetails\" />
     <Folder Include="public\app\createCourse\" />
+    <Folder Include="public\app\home\" />
+    <Folder Include="public\app\login\" />
+    <Folder Include="public\app\services\" />
+    <Folder Include="public\app\studentDetails\" />
     <Folder Include="typings\" />
     <Folder Include="typings\globals\" />
     <Folder Include="typings\globals\core-js\" />
@@ -118,6 +179,9 @@
     <TypeScriptCompile Include="public\app\app.module.ts" />
     <TypeScriptCompile Include="public\app\app.routes.ts" />
     <TypeScriptCompile Include="public\app\bootstrap.ts" />
+    <TypeScriptCompile Include="public\app\courseDetails\courseDetails.component.ts" />
+    <TypeScriptCompile Include="public\app\courseDetails\courseDetails.module.ts" />
+    <TypeScriptCompile Include="public\app\courseDetails\courseDetails.routes.ts" />
     <TypeScriptCompile Include="public\app\createCourse\createCourse.component.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -127,6 +191,18 @@
     <TypeScriptCompile Include="public\app\createCourse\createCourse.routes.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="public\app\home\home.component.ts" />
+    <TypeScriptCompile Include="public\app\home\home.module.ts" />
+    <TypeScriptCompile Include="public\app\home\home.routes.ts" />
+    <TypeScriptCompile Include="public\app\login\login.component.ts" />
+    <TypeScriptCompile Include="public\app\login\login.module.ts" />
+    <TypeScriptCompile Include="public\app\login\login.routes.ts" />
+    <TypeScriptCompile Include="public\app\services\authentication.service.ts" />
+    <TypeScriptCompile Include="public\app\services\course.service.ts" />
+    <TypeScriptCompile Include="public\app\services\students.service.ts" />
+    <TypeScriptCompile Include="public\app\studentDetails\studentDetails.component.ts" />
+    <TypeScriptCompile Include="public\app\studentDetails\studentDetails.module.ts" />
+    <TypeScriptCompile Include="public\app\studentDetails\studentDetails.routes.ts" />
     <TypeScriptCompile Include="typings\globals\core-js\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
