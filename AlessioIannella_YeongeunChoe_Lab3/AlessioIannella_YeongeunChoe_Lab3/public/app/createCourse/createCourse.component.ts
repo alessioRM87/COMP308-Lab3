@@ -6,7 +6,7 @@ import { CourseService } from '../services/course.service';
 @Component({
     selector: 'createCourse',
     templateUrl: 'app/createCourse/createCourse.template.html',
-    // styleUrls: ['app/createCourse/createCourse.template.css'],
+    styleUrls: ['app/createCourse/createCourse.template.css'],
 })
 
 export class CreateCourseComponent {
@@ -21,11 +21,11 @@ export class CreateCourseComponent {
     constructor(
         private router: Router,
         private authenticationService: AuthenticationService,
-        private courseService: CourseService) { 
-        
+        private courseService: CourseService) {
+
     }
 
-    clearErrors(){
+    clearErrors() {
         this.courseError = "";
     }
 

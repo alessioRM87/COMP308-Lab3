@@ -44,6 +44,7 @@ var CreateCourseComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'createCourse',
             templateUrl: 'app/createCourse/createCourse.template.html',
+            styleUrls: ['app/createCourse/createCourse.template.css'],
         }),
         __metadata("design:paramtypes", [router_1.Router,
             authentication_service_1.AuthenticationService,

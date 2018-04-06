@@ -1,4 +1,4 @@
-
+﻿
 .background {
     padding: 0 5px 5px;
     position: relative;
@@ -29,8 +29,8 @@
     color: #7cc0c7;
     font-size: 1em;
     padding: 1rem;
-    width: 100%;
     align-content: center;
+    margin: auto;
 }
 
 

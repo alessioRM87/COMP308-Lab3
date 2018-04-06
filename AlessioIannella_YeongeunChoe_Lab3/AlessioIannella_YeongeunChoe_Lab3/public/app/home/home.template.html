@@ -1,84 +1,94 @@
-<div>
-    <h1>Welcome back, {{user.firstName}} {{user.lastName}}!</h1>
-    <p>You can review your info with your registered courses.</p>
-
-    <p>Student Number: {{user.studentNumber}}</p>
-    <p>Email: {{user.email}}</p>
-    <p>Address: {{user.address}}</p>
-    <p>City: {{user.city}}</p>
-    <p>Postal Code: {{user.postalCode}}</p>
-    <p>Phone Number: {{user.phoneNumber}}</p>
-    <p>Program: {{user.program}}</p>
-
-    <p style="height: 20px"></p>
-    <p>Registered Courses:</p>
+<div class="background">
+    <div class="header1">
+        <h1>Welcome back, {{user.firstName}} {{user.lastName}}!</h1>
+    </div>
+    <div class="header2">
+        You can review your info with your registered courses.
+    </div>
+    <div class="text">
+        <p>Student Number: {{user.studentNumber}}</p>
+        <p>Email: {{user.email}}</p>
+        <p>Address: {{user.address}}</p>
+        <p>City: {{user.city}}</p>
+        <p>Postal Code: {{user.postalCode}}</p>
+        <p>Phone Number: {{user.phoneNumber}}</p>
+        <p>Program: {{user.program}}</p>
+    </div>
+    <div class="header1">
+        List of Registered Courses
+    </div>
     <table class="table">
         <thead>
-            <tr>
-                <th scope="col">Course Code</th>
-                <th scope="col">Course Name</th>
-                <th scope="col">Section</th>
-                <th scope="col">Semester</th>
+            <tr class="text">
+                <th class="text" scope="col">Course Code</th>
+                <th class="text" scope="col">Course Name</th>
+                <th class="text" scope="col">Section</th>
+                <th class="text" scope="col">Semester</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let registeredCourse of user.courses">
-                <td>{{registeredCourse.courseCode}}</td>
-                <td>{{registeredCourse.courseName}}</td>
-                <td>{{registeredCourse.section}}</td>
-                <td>{{registeredCourse.semester}}</td>
+            <tr class="text" *ngFor="let registeredCourse of user.courses">
+                <td class="text">{{registeredCourse.courseCode}}</td>
+                <td class="text">{{registeredCourse.courseName}}</td>
+                <td class="text">{{registeredCourse.section}}</td>
+                <td class="text">{{registeredCourse.semester}}</td>
             </tr>
     </table>
 
-    <p style="height: 80px"></p>
-    <p>This is a list of all courses. You can review details of them, register or unregister to them.</p>
-    <p>If you cannot find the course you want to register, please create it here:</p>
-    <button class="btn btn-primary" (click)="onClick()">CREATE NEW COURSE</button>
-    <!--<a [routerLink]="['/createCourse']">CREATE NEW COURSE</a>-->
-    <p style="height: 20px"></p>
+    <div class="header1">
+        CREATE NEW COURSE
+    </div>
+    <div class="header2">
+        If you cannot find the course you want to register, please create it here
+    </div>
+    <button class="button" (click)="onClick()">CREATE NEW COURSE</button>
+
+    <div class="header1">
+        List of All Courses
+    </div>
     <span style="color:red">{{courseError}}</span>
     <table class="table">
         <thead>
-            <tr>
-                <th scope="col">Course Code</th>
-                <th scope="col">Course Name</th>
-                <th scope="col">Section</th>
-                <th scope="col">Semester</th>
-                <th scope="col">Details</th>
-                <th scope="col">Register</th>
-                <th scope="col">Unregister</th>
+            <tr class="text">
+                <th class="text" scope="col">Course Code</th>
+                <th class="text" scope="col">Course Name</th>
+                <th class="text" scope="col">Section</th>
+                <th class="text" scope="col">Semester</th>
+                <th class="text" scope="col">Details</th>
+                <th class="text" scope="col">Register</th>
+                <th class="text" scope="col">Unregister</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let course of courses">
-                <td>{{course.courseCode}}</td>
-                <td>{{course.courseName}}</td>
-                <td>{{course.semester}}</td>
-                <td>{{course.section}}</td>
-                <td><button class="btn btn-primary" style="top:20px" (click)="viewDetails(course._id)">VIEW DETAILS</button></td>
-                <td><button class="btn btn-primary" style="top:20px" (click)="addCourse(course._id)">ADD COURSE</button></td>
-                <td><button class="btn btn-primary" style="top:20px" (click)="dropCourse(course._id)">DROP COURSE</button></td>
+            <tr class="text" *ngFor="let course of courses">
+                <td class="text">{{course.courseCode}}</td>
+                <td class="text">{{course.courseName}}</td>
+                <td class="text">{{course.semester}}</td>
+                <td class="text">{{course.section}}</td>
+                <td><button class="button2" style="top:20px" (click)="viewDetails(course._id)">VIEW DETAILS</button></td>
+                <td><button class="button2" style="top:20px" (click)="addCourse(course._id)">ADD COURSE</button></td>
+                <td><button class="button2" style="top:20px" (click)="dropCourse(course._id)">DROP COURSE</button></td>
 
             </tr>
     </table>
 
-    <p style="height: 80px"></p>
-    <p>This is a list of all students. You can review details of them</p>
-    <p style="height: 20px"></p>
+    <div class="header1">
+        list of all students
+    </div>
     <span style="color:red">{{studentsError}}</span>
     <table class="table">
         <thead>
-            <tr>
+            <tr class="text">
                 <th scope="col">Student Number</th>
                 <th scope="col">Full Name</th>
                 <th scope="col">Details</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let student of students">
-                <td>{{student.studentNumber}}</td>
-                <td>{{student.fullName}}</td>
-                <td><button class="btn btn-primary" style="top:20px" (click)="viewStudentInfo(student._id)">VIEW STUDENT INFO</button></td>
+            <tr *ngFor="let student of students" class="text">
+                <td class="text">{{student.studentNumber}}</td>
+                <td class="text">{{student.fullName}}</td>
+                <td class="text"><button class="button1" style="top:20px" (click)="viewStudentInfo(student._id)">VIEW STUDENT INFO</button></td>
             </tr>
     </table>
 </div>

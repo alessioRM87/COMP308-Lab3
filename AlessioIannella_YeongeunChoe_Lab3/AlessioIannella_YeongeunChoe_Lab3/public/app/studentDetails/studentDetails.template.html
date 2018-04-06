@@ -1,30 +1,35 @@
-<div>
-    <p>Student Full Name: {{student.fullName}}</p>
-    <p>Student Number: {{student.studentNumber}}</p>
-    <p>Email: {{student.email}}</p>
-    <p>Address: {{student.address}}</p>
-    <p>City: {{student.city}}</p>
-    <p>Postal Code: {{student.postalCode}}</p>
-    <p>Phone Number: {{student.phoneNumber}}</p>
-    <p>Program: {{student.program}}</p>
-
-    <p style="height: 20px"></p>
-    <p>Registered Courses:</p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Course Code</th>
-                <th scope="col">Course Name</th>
-                <th scope="col">Section</th>
-                <th scope="col">Semester</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let registeredCourse of student.courses">
-                <td>{{registeredCourse.courseCode}}</td>
-                <td>{{registeredCourse.courseName}}</td>
-                <td>{{registeredCourse.section}}</td>
-                <td>{{registeredCourse.semester}}</td>
-            </tr>
-    </table>
-</div>
+<div class="background">
+    <div class="header1">
+        <h1>Student Details</h1>
+    </div>
+    <div class="text">
+        <p>Student Full Name: {{student.fullName}}</p>
+        <p>Student Number: {{student.studentNumber}}</p>
+        <p>Email: {{student.email}}</p>
+        <p>Address: {{student.address}}</p>
+        <p>City: {{student.city}}</p>
+        <p>Postal Code: {{student.postalCode}}</p>
+        <p>Phone Number: {{student.phoneNumber}}</p>
+        <p>Program: {{student.program}}</p>
+    </div>
+    <div class="header1">
+        Registered Courses
+    </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th  class="text" scope="col">Course Code</th>
+                    <th  class="text" scope="col">Course Name</th>
+                    <th  class="text" scope="col">Section</th>
+                    <th  class="text" scope="col">Semester</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let registeredCourse of student.courses">
+                    <td  class="text">{{registeredCourse.courseCode}}</td>
+                    <td  class="text">{{registeredCourse.courseName}}</td>
+                    <td  class="text">{{registeredCourse.section}}</td>
+                    <td  class="text">{{registeredCourse.semester}}</td>
+                </tr>
+        </table>
+    </div>

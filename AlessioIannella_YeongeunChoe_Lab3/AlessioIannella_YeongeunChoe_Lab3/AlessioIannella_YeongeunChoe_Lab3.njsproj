@@ -80,6 +80,9 @@
     <Content Include="public\app\app.module.js.map" />
     <Content Include="public\app\app.routes.js.map" />
     <Content Include="public\app\bootstrap.js.map" />
+    <Content Include="public\app\createCourse\createCourse.template.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="public\app\createCourse\createCourse.template.html">
       <SubType>Code</SubType>
     </Content>

@@ -1,20 +1,21 @@
-﻿<div class="container">
-    <h1>Create New Course</h1>
-
-    <div>
+﻿<div class="background">
+    <div class="header1">
+        <h1>Create New Course</h1>
+    </div>
+    <div class="text">
         <p class="form-group">
-            <input class="form-control" placeholder="Enter Course Code" [(ngModel)]="courseCode" />
+            Course Code: <input class="form-control" placeholder="Enter Course Code" [(ngModel)]="courseCode" />
         </p>
         <div class="form-group">
-            <input class="form-control" placeholder="Enter Course Name" [(ngModel)]="courseName" />
+            Course Name:  <input class="form-control" placeholder="Enter Course Name" [(ngModel)]="courseName" />
         </div>
         <div class="form-group">
-            <input class="form-control" placeholder="Enter Section" [(ngModel)]="section" />
+            Section: <input class="form-control" placeholder="Enter Section" [(ngModel)]="section" />
         </div>
         <div class="form-group">
-            <input class="form-control" placeholder="Enter Semester" [(ngModel)]="semester" />
+            Semester: <input class="form-control" placeholder="Enter Semester" [(ngModel)]="semester" />
         </div>
-        <button class="btn btn-primary" style="top:20px" (click)="createCourse(courseCode, courseName, section, semester)">Create New Course</button>
+        <button class="button" style="top:20px" (click)="createCourse(courseCode, courseName, section, semester)">Create New Course</button>
         <span style="color:red">{{courseError}}</span>
     </div>
 </div>
