@@ -117,7 +117,6 @@
     <TypeScriptCompile Include="public\app\app.component.ts" />
     <TypeScriptCompile Include="public\app\app.module.ts" />
     <TypeScriptCompile Include="public\app\app.routes.ts" />
-    <TypeScriptCompile Include="public\app\authentication.service.ts" />
     <TypeScriptCompile Include="public\app\bootstrap.ts" />
     <TypeScriptCompile Include="public\app\createCourse\createCourse.component.ts">
       <SubType>Code</SubType>
