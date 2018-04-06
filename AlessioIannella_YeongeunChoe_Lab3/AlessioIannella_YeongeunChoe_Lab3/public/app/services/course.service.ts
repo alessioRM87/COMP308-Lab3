@@ -10,6 +10,8 @@ const httpOptions = {
 @Injectable()
 export class CourseService {
 
+    public selectedCourse;
+
     constructor(private http: HttpClient) { }
 
     private handleError(error: Response) {
@@ -20,6 +22,17 @@ export class CourseService {
     getCourses(){
 
         return this.http.get('/api/courses');
+    }
+
+    getCourseInfo(courseID){
+
+        return this.http.get('/api/courses/' + courseID)
+        .map((course) => {
+            console.log('Course Service get course info. Course: ', course);
+            this.selectedCourse = course;
+            return course;
+        })
+        .catch(this.handleError);
     }
 
     registerToCourse(registerRequest){
@@ -48,7 +61,7 @@ export class CourseService {
         return this.http.get('/api/students/course/' + courseID);
     }
 
-    updateCourse(courseID, updateRequest){
+    updateCourseByID(courseID, updateRequest){
         let body = JSON.stringify(updateRequest);
 
         return this.http.put('/api/courses/' + courseID, body, httpOptions)
@@ -59,8 +72,8 @@ export class CourseService {
         .catch(this.handleError);
     }
 
-    deleteCourse(courseID){
-        return this.http.delete('/api/courses/' + courseID);
+    deleteCourseByID(courseID){
+        return this.http.delete('/api/courses/' + courseID, httpOptions);
     }
 
     createCourse(courseRequest){

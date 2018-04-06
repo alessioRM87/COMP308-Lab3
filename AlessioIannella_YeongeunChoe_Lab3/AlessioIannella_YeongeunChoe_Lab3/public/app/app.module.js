@@ -16,6 +16,7 @@ var app_routes_1 = require("./app.routes");
 var home_module_1 = require("./home/home.module");
 var login_module_1 = require("./login/login.module");
 var studentDetails_module_1 = require("./studentDetails/studentDetails.module");
+var courseDetails_module_1 = require("./courseDetails/courseDetails.module");
 var authentication_service_1 = require("./services/authentication.service");
 var course_service_1 = require("./services/course.service");
 var students_service_1 = require("./services/students.service");
@@ -31,6 +32,7 @@ var AppModule = /** @class */ (function () {
                 home_module_1.HomeModule,
                 login_module_1.LoginModule,
                 studentDetails_module_1.StudentDetailsModule,
+                courseDetails_module_1.CourseDetailsModule,
                 router_1.RouterModule.forRoot(app_routes_1.AppRoutes),
             ],
             declarations: [

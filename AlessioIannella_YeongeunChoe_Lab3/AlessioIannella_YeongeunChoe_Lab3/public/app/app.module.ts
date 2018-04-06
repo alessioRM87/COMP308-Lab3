@@ -8,6 +8,7 @@ import { AppRoutes } from './app.routes';
 import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
 import { StudentDetailsModule } from './studentDetails/studentDetails.module';
+import { CourseDetailsModule } from './courseDetails/courseDetails.module';
 import { AuthenticationService } from './services/authentication.service';
 import { CourseService } from './services/course.service';
 import { StudentsService } from './services/students.service';
@@ -20,6 +21,7 @@ import { StudentsService } from './services/students.service';
         HomeModule,
         LoginModule,
         StudentDetailsModule,
+        CourseDetailsModule,
         RouterModule.forRoot(AppRoutes),
     ],
     declarations: [

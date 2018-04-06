@@ -37,6 +37,16 @@ var StudentsService = /** @class */ (function () {
         })
             .catch(this.handleError);
     };
+    StudentsService.prototype.getStudentsInCourse = function (courseID) {
+        var _this = this;
+        return this.http.get('/api/students/course/' + courseID)
+            .map(function (students) {
+            console.log('Course Service get course info. Students: ', students);
+            _this.registeredStudents = students;
+            return students;
+        })
+            .catch(this.handleError);
+    };
     StudentsService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.HttpClient])

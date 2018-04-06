@@ -11,6 +11,7 @@ const httpOptions = {
 export class StudentsService {
 
     public selectedStudent;
+    public registeredStudents;
 
     constructor(private http: HttpClient) { }
 
@@ -32,6 +33,16 @@ export class StudentsService {
             return result;
         })
         .catch(this.handleError);
+    }
+
+    getStudentsInCourse(courseID){
+        return this.http.get('/api/students/course/' + courseID)
+            .map((students) => {
+                console.log('Course Service get course info. Students: ', students);
+                this.registeredStudents = students;
+                return students;
+            })
+            .catch(this.handleError);
     }
 
 }

@@ -90,7 +90,7 @@ exports.delete = function (req, res) {
             });
         } else {
 
-            Student.find().populate('courses').exec((err, students) => {
+            Student.find().exec((err, students) => {
                 if (err) {
                     return res.status(400).send({
                         message: getErrorMessage(err)
@@ -100,14 +100,13 @@ exports.delete = function (req, res) {
 
                     for (var i = 0; i < students.length; i++) {
                         for (var j = 0; j < students[i].courses.length; j++) {
-                            if (students[i].courses[j].id === course.id) {
+                            if (students[i].courses[j] === course.id) {
                                 students[i].courses.splice(j, 1);
                             }
                         }
                     }
 
-                    res.status(200);
-
+                    res.status(200).json();
 
                 }
             });

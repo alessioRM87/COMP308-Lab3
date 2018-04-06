@@ -27,6 +27,16 @@ var CourseService = /** @class */ (function () {
     CourseService.prototype.getCourses = function () {
         return this.http.get('/api/courses');
     };
+    CourseService.prototype.getCourseInfo = function (courseID) {
+        var _this = this;
+        return this.http.get('/api/courses/' + courseID)
+            .map(function (course) {
+            console.log('Course Service get course info. Course: ', course);
+            _this.selectedCourse = course;
+            return course;
+        })
+            .catch(this.handleError);
+    };
     CourseService.prototype.registerToCourse = function (registerRequest) {
         var body = JSON.stringify(registerRequest);
         return this.http.post('/api/students/addCourse', body, httpOptions)
@@ -48,7 +58,7 @@ var CourseService = /** @class */ (function () {
     CourseService.prototype.getStudentsFromCourse = function (courseID) {
         return this.http.get('/api/students/course/' + courseID);
     };
-    CourseService.prototype.updateCourse = function (courseID, updateRequest) {
+    CourseService.prototype.updateCourseByID = function (courseID, updateRequest) {
         var body = JSON.stringify(updateRequest);
         return this.http.put('/api/courses/' + courseID, body, httpOptions)
             .map(function (result) {
@@ -57,8 +67,8 @@ var CourseService = /** @class */ (function () {
         })
             .catch(this.handleError);
     };
-    CourseService.prototype.deleteCourse = function (courseID) {
-        return this.http.delete('/api/courses/' + courseID);
+    CourseService.prototype.deleteCourseByID = function (courseID) {
+        return this.http.delete('/api/courses/' + courseID, httpOptions);
     };
     CourseService.prototype.createCourse = function (courseRequest) {
         var body = JSON.stringify(courseRequest);

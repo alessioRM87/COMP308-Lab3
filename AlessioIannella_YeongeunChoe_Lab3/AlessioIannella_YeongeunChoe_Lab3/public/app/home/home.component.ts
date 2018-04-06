@@ -58,6 +58,27 @@ export class HomeComponent {
 
     viewDetails(courseID){
         console.log("VIEW DETAILS CLICKED FOR COURSE WITH ID: ", courseID);
+        this.courseService.getCourseInfo(courseID).subscribe(
+            (course) => {
+                this.studentsService.getStudentsInCourse(courseID).subscribe(
+                    (students) => {
+                        this.router.navigate(['courseDetails']);
+                    },
+                    (err) => {
+                        this.courseError = err.error.message;
+                    },
+                    () => {
+                        console.log("GET COURSE INFO COMPLETED");
+                    }
+                );
+            },
+            (err) => {
+                this.courseError = err.error.message;
+            },
+            () => {
+                console.log("GET COURSE INFO COMPLETED");
+            }
+        );
     }
 
     addCourse(courseID){

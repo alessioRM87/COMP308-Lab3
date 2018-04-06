@@ -43,7 +43,21 @@ var HomeComponent = /** @class */ (function () {
         });
     }
     HomeComponent.prototype.viewDetails = function (courseID) {
+        var _this = this;
         console.log("VIEW DETAILS CLICKED FOR COURSE WITH ID: ", courseID);
+        this.courseService.getCourseInfo(courseID).subscribe(function (course) {
+            _this.studentsService.getStudentsInCourse(courseID).subscribe(function (students) {
+                _this.router.navigate(['courseDetails']);
+            }, function (err) {
+                _this.courseError = err.error.message;
+            }, function () {
+                console.log("GET COURSE INFO COMPLETED");
+            });
+        }, function (err) {
+            _this.courseError = err.error.message;
+        }, function () {
+            console.log("GET COURSE INFO COMPLETED");
+        });
     };
     HomeComponent.prototype.addCourse = function (courseID) {
         var _this = this;
