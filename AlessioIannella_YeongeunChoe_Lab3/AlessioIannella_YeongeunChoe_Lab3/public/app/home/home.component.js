@@ -98,6 +98,10 @@ var HomeComponent = /** @class */ (function () {
             console.log("GET STUDENT INFO COMPLETED");
         });
     };
+    HomeComponent.prototype.onClick = function () {
+        console.log("GO TO CREATE COURSE PAGE");
+        this.router.navigate(['createCourse']);
+    };
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'home',

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
 import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
+import { CreareCourseModule } from './createCourse/createCourse.module';
 import { StudentDetailsModule } from './studentDetails/studentDetails.module';
 import { CourseDetailsModule } from './courseDetails/courseDetails.module';
 import { AuthenticationService } from './services/authentication.service';
@@ -20,6 +21,7 @@ import { StudentsService } from './services/students.service';
         FormsModule,
         HomeModule,
         LoginModule,
+        CreareCourseModule,
         StudentDetailsModule,
         CourseDetailsModule,
         RouterModule.forRoot(AppRoutes),

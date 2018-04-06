@@ -80,6 +80,9 @@
     <Content Include="public\app\app.module.js.map" />
     <Content Include="public\app\app.routes.js.map" />
     <Content Include="public\app\bootstrap.js.map" />
+    <Content Include="public\app\createCourse\createCourse.template.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />
     <Content Include="typings.json" />
@@ -99,6 +102,7 @@
     <Folder Include="config\strategies\" />
     <Folder Include="public\" />
     <Folder Include="public\app\" />
+    <Folder Include="public\app\createCourse\" />
     <Folder Include="typings\" />
     <Folder Include="typings\globals\" />
     <Folder Include="typings\globals\core-js\" />
@@ -112,6 +116,15 @@
     <TypeScriptCompile Include="public\app\app.routes.ts" />
     <TypeScriptCompile Include="public\app\authentication.service.ts" />
     <TypeScriptCompile Include="public\app\bootstrap.ts" />
+    <TypeScriptCompile Include="public\app\createCourse\createCourse.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="public\app\createCourse\createCourse.module.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="public\app\createCourse\createCourse.routes.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="typings\globals\core-js\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\node\index.d.ts" />

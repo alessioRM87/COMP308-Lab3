@@ -136,5 +136,9 @@ export class HomeComponent {
 
     }
 
+    onClick() {
+        console.log("GO TO CREATE COURSE PAGE");
+        this.router.navigate(['createCourse']);
+    }
     
 }
